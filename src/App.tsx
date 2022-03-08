@@ -1,6 +1,6 @@
 
 import {createGlobalStyle } from 'styled-components';
-import { darkTheme } from './theme';
+import TodoList from './TodoList';
 
 
 
@@ -60,8 +60,8 @@ table {
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color : ${props => props.theme.bgColor};
-  color: ${props =>props.theme.bgColor};
+  background-color : #2f3640;
+  color:#2f3640;
 }
 a{
   text-decoration: none;
@@ -75,6 +75,7 @@ function App() {
   return(
     <>
     <GlobalStyle />
+    <TodoList />
     </>
   );
 }
