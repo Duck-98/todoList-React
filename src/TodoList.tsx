@@ -1,7 +1,7 @@
-import { useRecoilValue } from "recoil";
-import { toDoSelector, toDoState } from "./atoms";
-import CreateToDo from "./CreateToDo";
-import ToDo from "./ToDo";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { categoryState, toDoSelector, toDoState } from "./atoms";
+import CreateToDo from "./components/CreateToDo";
+import ToDo from "./components/ToDo";
 
 function ToDoList() {
   const toDos = useRecoilValue(toDoSelector);
@@ -19,9 +19,9 @@ function ToDoList() {
         <option value="DONE">Done</option>
       </select>
       <CreateToDo />
-      {toDos?.map((toDo) => (
-        <ToDo key={toDo.id} {...toDo} />
-      ))}
+     {toDos?.map((toDo) => (
+       <ToDo key={toDo.id} {...toDo} />
+     ))}
    </div>
   );
 }
